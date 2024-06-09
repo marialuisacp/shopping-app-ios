@@ -32,69 +32,70 @@ struct ContentView: View {
                         LazyVGrid(columns: self.columns) {
                             ForEach(self.productsArray, id: \.self) { product in
                                 VStack(alignment: .center) {
-                                    VStack(alignment: .center) {
-                                        AsyncImage(url: URL(string: product.imageUrl)) { image in
-                                            image.resizable().aspectRatio(contentMode: .fit)
-                                        } placeholder: {
-                                            ProgressView()
-                                        }
-                                        .frame(width: 80, height: 80)
-                                        .background(Rectangle().fill(Color.white))
-                                        
-                                        NavigationLink {
-                                            VStack {
-                                                AsyncImage(url: URL(string: product.imageUrl)) { image in
-                                                    image.resizable().aspectRatio(contentMode: .fit)
-                                                } placeholder: {
-                                                    ProgressView()
-                                                }
-                                                .frame(width: .infinity, height: 180)
-                                                .background(Rectangle().fill(Color.white))
-                                                VStack(alignment: .leading) {
-                                                    Text(product.title).foregroundStyle(Color("primary"))
-                                                        .font(.title)
-                                                    Text("$ " + String(format: "%.2f", product.price)).font(.headline)
-                                                    Divider().background(Color.black).padding(.trailing, 128)
-                                                    Text(product.categoty).font(.caption).foregroundStyle(Color("secondary"))
-                                                    Text(product.description).font(.caption)
-                                                }
-                                                .padding(.horizontal, 24)
-                                                .padding(.bottom, 64)
+                                    NavigationLink {
+                                        VStack {
+                                            AsyncImage(url: URL(string: product.imageUrl)) { image in
+                                                image.resizable().aspectRatio(contentMode: .fit)
+                                            } placeholder: {
+                                                ProgressView()
                                             }
-                                        } label: {
+                                            .frame(width: .infinity, height: 180)
+                                            .background(Rectangle().fill(Color.white))
+                                            .padding([.vertical, .trailing], 16)
                                             VStack(alignment: .leading) {
-                                                Text(product.title)
-                                                    .font(.body)
-                                                    .foregroundStyle(Color("primary"))
-                                                    .multilineTextAlignment(.leading)
-                                                    .lineLimit(1)
+                                                Text(product.title).foregroundStyle(Color("primary"))
+                                                    .font(.title3)
+                                                Text("$ " + String(format: "%.2f", product.price)).font(.headline)
+                                                Divider().background(Color.black).padding(.trailing, 128)
                                                 Text(product.categoty).font(.caption).foregroundStyle(Color("secondary"))
-                                                Text("$ " + String(format: "%.2f", product.price)).foregroundStyle(Color.black)
-                                                
-                                                Divider().background(Color.black)
-                                                
-                                                Text(product.description)
-                                                    .font(.caption2)
-                                                    .foregroundStyle(Color.gray)
-                                                    .multilineTextAlignment(.leading)
-                                                    .lineLimit(2)
+                                                Text(product.description).font(.caption)
                                             }
-                                            
+                                            .padding(.horizontal, 24)
+                                            .padding(.bottom, 64)
                                         }
-                                        .padding()
+                                    } label: {
+                                        VStack(alignment: .center) {
+                                            AsyncImage(url: URL(string: product.imageUrl)) { image in
+                                                image.resizable().aspectRatio(contentMode: .fit)
+                                            } placeholder: {
+                                                ProgressView()
+                                            }
+                                            .frame(width: 80, height: 80)
+                                            .background(Rectangle().fill(Color.white))
+                                            
+                                            VStack(alignment: .leading) {
+                                                VStack(alignment: .leading) {
+                                                    Text(product.title)
+                                                        .font(.caption)
+                                                        .foregroundStyle(Color("primary"))
+                                                        .multilineTextAlignment(.leading)
+                                                        .lineLimit(1)
+                                                    Text(product.categoty).font(.caption).foregroundStyle(Color("secondary"))
+                                                    Text("$ " + String(format: "%.2f", product.price)).foregroundStyle(Color.black)
+                                                    
+                                                    Divider().background(Color.black)
+                                                    
+                                                    Text(product.description)
+                                                        .font(.caption2)
+                                                        .foregroundStyle(Color.gray)
+                                                        .multilineTextAlignment(.leading)
+                                                        .lineLimit(2)
+                                                }
+                                                .padding([.horizontal, .trailing], 8)
+                                            }
+                                            .background(Color("gray_200"))
+                                        }
                                     }
                                 }
-                                .frame(width: cardWidth, height: 240)
+                                .frame(width: cardWidth, height: 210)
                                 .background(
                                     RoundedRectangle(
                                         cornerRadius: 8)
                                     .fill(Color.white)
                                     .shadow(color: Color(.sRGBLinear, white: 0, opacity: 0.02), radius: 5, x: 0, y: 0)
                                 )
-                                .border(Color("gray_100"), width: 1)
-                                .padding()
+                                .border(Color("gray_300"), width: 1)
                             }
-                            
                         }
                         .task {
                             await Shoppingservice.getProducts {
@@ -111,9 +112,9 @@ struct ContentView: View {
                                 }
                             }
                         }
-                        .padding([.horizontal, .trailing], 8)
+                        .padding([.all, .trailing], 8)
                     }
-                    .background(Color.white)
+                    .background(Color("gray_400"))
                     .frame(width: .infinity)
                 }
             }
