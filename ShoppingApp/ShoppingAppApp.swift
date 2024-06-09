@@ -1,10 +1,3 @@
-//
-//  ShoppingAppApp.swift
-//  ShoppingApp
-//
-//  Created by Maria Luísa Costa Pinto on 07/06/24.
-//
-
 import SwiftUI
 
 @main
