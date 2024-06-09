@@ -16,6 +16,7 @@
 		3FB235052C13BB5C00E2AAF1 /* ShoppingAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB235042C13BB5C00E2AAF1 /* ShoppingAppTests.swift */; };
 		3FB2350F2C13BB5C00E2AAF1 /* ShoppingAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB2350E2C13BB5C00E2AAF1 /* ShoppingAppUITests.swift */; };
 		3FB235112C13BB5C00E2AAF1 /* ShoppingAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB235102C13BB5C00E2AAF1 /* ShoppingAppUITestsLaunchTests.swift */; };
+		3FB235232C15F54300E2AAF1 /* ShoppingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB235222C15F54300E2AAF1 /* ShoppingService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		3FB2350A2C13BB5C00E2AAF1 /* ShoppingAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShoppingAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FB2350E2C13BB5C00E2AAF1 /* ShoppingAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingAppUITests.swift; sourceTree = "<group>"; };
 		3FB235102C13BB5C00E2AAF1 /* ShoppingAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		3FB235222C15F54300E2AAF1 /* ShoppingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		3FB234EC2C13BB5A00E2AAF1 /* ShoppingApp */ = {
 			isa = PBXGroup;
 			children = (
+				3FB235212C15F53700E2AAF1 /* services */,
 				3FB235202C15D28000E2AAF1 /* data */,
 				3FB234ED2C13BB5A00E2AAF1 /* ShoppingAppApp.swift */,
 				3FB234F42C13BB5A00E2AAF1 /* ContentView.swift */,
@@ -141,6 +144,14 @@
 				3FB234EF2C13BB5A00E2AAF1 /* Persistence.swift */,
 			);
 			path = data;
+			sourceTree = "<group>";
+		};
+		3FB235212C15F53700E2AAF1 /* services */ = {
+			isa = PBXGroup;
+			children = (
+				3FB235222C15F54300E2AAF1 /* ShoppingService.swift */,
+			);
+			path = services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,6 +288,7 @@
 				3FB234F32C13BB5A00E2AAF1 /* ShoppingApp.xcdatamodeld in Sources */,
 				3FB234F52C13BB5A00E2AAF1 /* ContentView.swift in Sources */,
 				3FB234F02C13BB5A00E2AAF1 /* Persistence.swift in Sources */,
+				3FB235232C15F54300E2AAF1 /* ShoppingService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
