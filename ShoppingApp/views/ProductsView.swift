@@ -1,7 +1,7 @@
 import SwiftUI
 import CoreData
 
-struct ContentView: View {
+struct ProductsView: View {
     @State var productsArray: [Product] = [Product]()
     var cardWidth = UIScreen.main.bounds.width / 2.2;
     var columns: [GridItem] = [
