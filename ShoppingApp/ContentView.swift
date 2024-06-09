@@ -8,19 +8,19 @@ struct ContentView: View {
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
         animation: .default)
     private var items: FetchedResults<Item>
-    @State var productsArray: [NSObject] = [NSObject]()
+    @State var productsArray: [Product] = [Product]()
     
+    var numbers = [0, 1, 2, 3]
     var body: some View {
         NavigationView {
-            List {
-                ForEach(items) { item in
+            List(self.productsArray, id: \.self) { product in
                     NavigationLink {
                         VStack {
                                 VStack(alignment: .leading) {
-                                    Text("Product Name")
+                                    Text(product.title)
                                         .font(.largeTitle)
                                     Divider().background(Color.black).padding(.trailing, 128)
-                                    Text("Finally, it's here: Travelling to space. With just a few simple clicks, you can book your ticket on the next shuttle to the Moon!\n\nFor real adventurous travellers, we also offer trips to Mars. In our new shuttle X1, you will be there in no time with the newest and most comfortable travelling options.")
+                                    Text("Test")
                                         
                                     Divider().background(Color.black).padding(.trailing, 128)
                                 }
@@ -30,18 +30,17 @@ struct ContentView: View {
                     } label: {
                         
                         VStack(alignment: .leading) {
-                            AsyncImage(url: URL(string: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg")) { image in
+                            AsyncImage(url: URL(string: product.imageUrl)) { image in
                                 image.resizable()
                             } placeholder: {
                                 ProgressView()
                             }
                             .frame(width: 50, height: 50)
-                            Text("Product").font(.largeTitle)
-                            Text("Your perfect pack for everyday use and walks in the forest.")
+                            Text(product.title).font(.largeTitle)
+                            Text(String(format: "%.2f", product.price))
+                            Text(product.description)
                         }
-                    }
                 }
-                .onDelete(perform: deleteItems)
             }
             .toolbar {
 #if os(iOS)
@@ -60,27 +59,35 @@ struct ContentView: View {
             Text("Select an item")
         }
         .task {
-            
             guard let url = URL(string: "https://fakestoreapi.com/products") else {
                 return
             }
-            let request = URLRequest(url: url)
+            _ = URLRequest(url: url)
             do {
                 let (data, _) = try await URLSession.shared.data(from: url)
                         do {
                             print("Shopping Service:: serialize")
+                            
                             if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [NSObject] {
-                                self.productsArray = json
-                                print("Shopping Service:: save products")
-                                print(self.productsArray)
+                                for product in json {
+                                    let newProduct = Product(id: product.value(forKey: "id") as! Int,
+                                                             categoty: product.value(forKey: "category") as! String,
+                                                             imageUrl:  product.value(forKey: "image") as! String,
+                                                             price: product.value(forKey: "price") as! Double,
+                                                             title: product.value(forKey: "title") as! String,
+                                                             description: product.value(forKey: "description") as! String)
+                                    
+                                    productsArray.append(newProduct)
+                                }
                             }
                         } catch let error {
                             print("Shopping Service:: error on get produtcs")
-                            print(error.localizedDescription)
+                            print(error)
                         }
                 
             } catch {
                 print("Failed to fetch site.")
+                
             }
         }
     }
