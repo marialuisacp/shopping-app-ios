@@ -9,7 +9,6 @@ struct PersistenceController {
 
         for _ in 0..<10 {
             var newItem = Item(context: viewContext)
-            print(newItem)
             newItem.timestamp = Date()
         }
         
@@ -25,6 +24,8 @@ struct PersistenceController {
     let container: NSPersistentContainer
 
     init(inMemory: Bool = false) {
+        var products = Shoppingservice.getShoppingData()
+        print(products)
         container = NSPersistentContainer(name: "ShoppingApp")
 
         if inMemory {

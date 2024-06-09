@@ -14,9 +14,30 @@ struct ContentView: View {
             List {
                 ForEach(items) { item in
                     NavigationLink {
-                        Text("Item at \(item.timestamp!, formatter: itemFormatter)")
+                        VStack {
+                                VStack(alignment: .leading) {
+                                    Text("Product Name")
+                                        .font(.largeTitle)
+                                    Divider().background(Color.black).padding(.trailing, 128)
+                                    Text("Finally, it's here: Travelling to space. With just a few simple clicks, you can book your ticket on the next shuttle to the Moon!\n\nFor real adventurous travellers, we also offer trips to Mars. In our new shuttle X1, you will be there in no time with the newest and most comfortable travelling options.")
+                                        
+                                    Divider().background(Color.black).padding(.trailing, 128)
+                                }
+                                .padding(.horizontal, 24)
+                                .padding(.bottom, 64)
+                        }
                     } label: {
-                        Text("teste texto")
+                        
+                        VStack(alignment: .leading) {
+                            AsyncImage(url: URL(string: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg")) { image in
+                                image.resizable()
+                            } placeholder: {
+                                ProgressView()
+                            }
+                            .frame(width: 50, height: 50)
+                            Text("Product").font(.largeTitle)
+                            Text("Your perfect pack for everyday use and walks in the forest.")
+                        }
                     }
                 }
                 .onDelete(perform: deleteItems)
@@ -33,6 +54,7 @@ struct ContentView: View {
                     }
                 }
             }
+            .listStyle(GroupedListStyle())
             Text("Select an item")
         }
     }

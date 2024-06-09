@@ -7,49 +7,33 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "088D66BF-34CE-432B-B3CA-117533090AD9"
-            shouldBeEnabled = "Yes"
+            uuid = "A1D74542-58D1-4F0B-BC3A-CD0DD222A403"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ShoppingApp/ContentView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E7BF1A20-B8BB-4128-B988-3C18A38F3AED"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ShoppingApp/data/Persistence.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "12"
-            endingLineNumber = "12"
-            landmarkName = "PersistenceController"
-            landmarkType = "14">
-            <Locations>
-               <Location
-                  uuid = "088D66BF-34CE-432B-B3CA-117533090AD9 - b65a27c471ecdd42"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; ShoppingApp.PersistenceController in variable initialization expression of static ShoppingApp.PersistenceController.preview : ShoppingApp.PersistenceController"
-                  moduleName = "ShoppingApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/lamarialuisa/workspace/my-projects/shopping-app/ShoppingApp/ShoppingApp/data/Persistence.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "12"
-                  endingLineNumber = "12"
-                  offsetFromSymbolStart = "948">
-               </Location>
-               <Location
-                  uuid = "088D66BF-34CE-432B-B3CA-117533090AD9 - b65a27c471ecdd42"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; ShoppingApp.PersistenceController in variable initialization expression of static ShoppingApp.PersistenceController.preview : ShoppingApp.PersistenceController"
-                  moduleName = "ShoppingApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/lamarialuisa/workspace/my-projects/shopping-app/ShoppingApp/ShoppingApp/data/Persistence.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "12"
-                  endingLineNumber = "12"
-                  offsetFromSymbolStart = "1056">
-               </Location>
-            </Locations>
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "init(inMemory:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
