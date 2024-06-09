@@ -1,9 +1,7 @@
 import SwiftUI
 
 @main
-struct ShoppingAppApp: App {
-    let persistenceController = PersistenceController.shared
-    
+struct ShoppingAppApp: App {    
     var body: some Scene {
         WindowGroup {
             ContentView()
