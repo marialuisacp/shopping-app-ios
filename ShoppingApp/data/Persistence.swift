@@ -24,8 +24,6 @@ struct PersistenceController {
     let container: NSPersistentContainer
 
     init(inMemory: Bool = false) {
-        var products = Shoppingservice.getShoppingData()
-        print(products)
         container = NSPersistentContainer(name: "ShoppingApp")
 
         if inMemory {

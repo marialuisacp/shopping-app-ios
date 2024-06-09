@@ -8,7 +8,8 @@ struct ContentView: View {
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
         animation: .default)
     private var items: FetchedResults<Item>
-
+    @State var productsArray: [NSObject] = [NSObject]()
+    
     var body: some View {
         NavigationView {
             List {
@@ -55,7 +56,32 @@ struct ContentView: View {
                 }
             }
             .listStyle(GroupedListStyle())
+            
             Text("Select an item")
+        }
+        .task {
+            
+            guard let url = URL(string: "https://fakestoreapi.com/products") else {
+                return
+            }
+            let request = URLRequest(url: url)
+            do {
+                let (data, _) = try await URLSession.shared.data(from: url)
+                        do {
+                            print("Shopping Service:: serialize")
+                            if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [NSObject] {
+                                self.productsArray = json
+                                print("Shopping Service:: save products")
+                                print(self.productsArray)
+                            }
+                        } catch let error {
+                            print("Shopping Service:: error on get produtcs")
+                            print(error.localizedDescription)
+                        }
+                
+            } catch {
+                print("Failed to fetch site.")
+            }
         }
     }
 
