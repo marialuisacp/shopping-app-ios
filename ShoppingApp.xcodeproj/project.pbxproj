@@ -99,8 +99,8 @@
 		3FB234EC2C13BB5A00E2AAF1 /* ShoppingApp */ = {
 			isa = PBXGroup;
 			children = (
+				3FB235202C15D28000E2AAF1 /* data */,
 				3FB234ED2C13BB5A00E2AAF1 /* ShoppingAppApp.swift */,
-				3FB234EF2C13BB5A00E2AAF1 /* Persistence.swift */,
 				3FB234F42C13BB5A00E2AAF1 /* ContentView.swift */,
 				3FB234F62C13BB5B00E2AAF1 /* Assets.xcassets */,
 				3FB234F82C13BB5B00E2AAF1 /* ShoppingApp.entitlements */,
@@ -133,6 +133,14 @@
 				3FB235102C13BB5C00E2AAF1 /* ShoppingAppUITestsLaunchTests.swift */,
 			);
 			path = ShoppingAppUITests;
+			sourceTree = "<group>";
+		};
+		3FB235202C15D28000E2AAF1 /* data */ = {
+			isa = PBXGroup;
+			children = (
+				3FB234EF2C13BB5A00E2AAF1 /* Persistence.swift */,
+			);
+			path = data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
