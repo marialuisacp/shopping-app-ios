@@ -29,6 +29,13 @@ struct ProductsView: View {
             VStack(alignment: .leading) {
                 NavigationView {
                     ScrollView {
+                        Image("banner")
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(minWidth: 0, maxWidth: .infinity, maxHeight: 460)
+                            .padding([.all, .trailing], 12)
+                            .shadow(color: Color(.sRGBLinear, white: 0, opacity: 0.05), radius: 5, x: 0, y: 0)
+
                         LazyVGrid(columns: self.columns) {
                             ForEach(self.productsArray, id: \.self) { product in
                                 VStack(alignment: .center) {
@@ -41,7 +48,6 @@ struct ProductsView: View {
                                             }
                                             .frame(width: .infinity, height: 180)
                                             .background(Rectangle().fill(Color.white))
-                                            .padding([.vertical, .trailing], 16)
                                             VStack(alignment: .leading) {
                                                 Text(product.title).foregroundStyle(Color("primary"))
                                                     .font(.title3)
