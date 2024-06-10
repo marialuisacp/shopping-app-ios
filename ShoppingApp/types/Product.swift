@@ -6,6 +6,8 @@ public class Product: Hashable {
         && lhs.categoty == rhs.categoty
         && lhs.imageUrl == rhs.imageUrl
         && lhs.description == rhs.description
+        && lhs.isPromotion == rhs.isPromotion
+        && lhs.valuePromotion == rhs.valuePromotion
     }
     
     var categoty: String
@@ -14,6 +16,8 @@ public class Product: Hashable {
     var price: Double
     var title: String
     var description: String
+    var isPromotion: Bool
+    var valuePromotion: Int
 
     public init(
         id: Int,
@@ -21,7 +25,9 @@ public class Product: Hashable {
         imageUrl: String,
         price: Double,
         title: String,
-        description: String
+        description: String,
+        isPromotion: Bool,
+        valuePromotion: Int
     ) {
         self.id = id
         self.title = title
@@ -29,6 +35,8 @@ public class Product: Hashable {
         self.categoty = categoty
         self.imageUrl = imageUrl
         self.description = description
+        self.isPromotion = isPromotion
+        self.valuePromotion = valuePromotion
     }
     
     public func hash(into hasher: inout Hasher) {
@@ -38,5 +46,7 @@ public class Product: Hashable {
         hasher.combine(categoty)
         hasher.combine(imageUrl)
         hasher.combine(description)
+        hasher.combine(isPromotion)
+        hasher.combine(valuePromotion)
     }
 }
