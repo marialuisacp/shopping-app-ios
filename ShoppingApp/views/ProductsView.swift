@@ -109,11 +109,9 @@ struct ProductsView: View {
                                                 Text("-" + String(product.valuePromotion) + "%").foregroundStyle(Color.white).font(Font.caption2.weight(.bold))
                                                     .frame(width: 40, height: 12)
                                                     .background(Rectangle().fill(Color("secondary")))
-                                                    .position(x: 20, y: 10)
                                             } else {
-                                                Text("").foregroundStyle(Color.white)
+                                                Text("").foregroundStyle(Color.white).font(Font.caption2.weight(.bold))
                                                     .frame(width: 40, height: 12)
-                                                    .position(x: 20, y: 10)
                                             }
                                             
                                             AsyncImage(url: URL(string: product.imageUrl)) { image in
@@ -140,7 +138,7 @@ struct ProductsView: View {
                                                         .font(.caption2)
                                                         .foregroundStyle(Color.gray)
                                                         .multilineTextAlignment(.leading)
-                                                        .lineLimit(2)
+                                                        .lineLimit(3)
                                                 }
                                                 .padding([.horizontal, .trailing], 8)
                                             }
