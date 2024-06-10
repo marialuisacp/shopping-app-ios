@@ -12,6 +12,7 @@ struct ProductsView: View {
     ]
     
     func filterProducts(category: String) {
+        filterdProductsArray = []
         if(category == "all") {
             filterdProductsArray = productsArray
         } else {
@@ -90,6 +91,11 @@ struct ProductsView: View {
                                                 Text(product.title).foregroundStyle(Color("primary"))
                                                     .font(.title3)
                                                 Text("$ " + String(format: "%.2f", product.price)).font(.headline)
+                                                if product.isPromotion {
+                                                    Text("-" + String(product.valuePromotion) + "%").foregroundStyle(Color.white).font(Font.caption2.weight(.bold))
+                                                        .frame(width: 40, height: 18)
+                                                        .background(Rectangle().fill(Color("secondary")))
+                                                }
                                                 Divider().background(Color.black).padding(.trailing, 128)
                                                 Text(product.categoty).font(.caption).foregroundStyle(Color("secondary"))
                                                 Text(product.description).font(.caption)
@@ -99,6 +105,17 @@ struct ProductsView: View {
                                         }
                                     } label: {
                                         VStack(alignment: .center) {
+                                            if product.isPromotion {
+                                                Text("-" + String(product.valuePromotion) + "%").foregroundStyle(Color.white).font(Font.caption2.weight(.bold))
+                                                    .frame(width: 40, height: 12)
+                                                    .background(Rectangle().fill(Color("secondary")))
+                                                    .position(x: 20, y: 10)
+                                            } else {
+                                                Text("").foregroundStyle(Color.white)
+                                                    .frame(width: 40, height: 12)
+                                                    .position(x: 20, y: 10)
+                                            }
+                                            
                                             AsyncImage(url: URL(string: product.imageUrl)) { image in
                                                 image.resizable().aspectRatio(contentMode: .fit)
                                             } placeholder: {
@@ -142,16 +159,21 @@ struct ProductsView: View {
                             }
                         }
                         .task {
+                            productsArray = []
+                            filterdProductsArray = []
                             await Shoppingservice.getProducts {
                                 products in
                                 for product in products {
+                                    let isPromotion = Bool.random()
+                                    let valuePromotion = Int.random(in: 1..<15)
                                     let newProduct = Product(id: product.value(forKey: "id") as! Int,
                                                              categoty: product.value(forKey: "category") as! String,
                                                              imageUrl:  product.value(forKey: "image") as! String,
                                                              price: product.value(forKey: "price") as! Double,
                                                              title: product.value(forKey: "title") as! String,
-                                                             description: product.value(forKey: "description") as! String)
-                                    
+                                                             description: product.value(forKey: "description") as! String,
+                                                             isPromotion: isPromotion,
+                                                             valuePromotion: valuePromotion)
                                     productsArray.append(newProduct)
                                     filterdProductsArray.append(newProduct)
                                 }
