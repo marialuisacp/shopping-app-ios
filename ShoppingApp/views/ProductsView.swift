@@ -3,11 +3,28 @@ import CoreData
 
 struct ProductsView: View {
     @State var productsArray: [Product] = [Product]()
-    var cardWidth = UIScreen.main.bounds.width / 2.2;
+    @State var filterdProductsArray: [Product] = [Product]()
+    @State var categoriesArray: [String] = [String]()
+    var cardWidth = UIScreen.main.bounds.width / 2.2
     var columns: [GridItem] = [
         GridItem(.adaptive(minimum: 100, maximum: UIScreen.main.bounds.width / 2)),
         GridItem(.flexible(minimum: 100, maximum: UIScreen.main.bounds.width / 2), spacing: 0)
     ]
+    
+    func filterProducts(category: String) {
+        if(category == "all") {
+            filterdProductsArray = productsArray
+        } else {
+            let filteredProducts = productsArray.filter { product in
+                if product.categoty == category {
+                    return true
+                } else {
+                    return false
+                }
+            }
+            filterdProductsArray = filteredProducts
+        }
+    }
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -27,6 +44,27 @@ struct ProductsView: View {
             
             
             VStack(alignment: .leading) {
+                ScrollView(.horizontal) {
+                    HStack {
+                        ForEach(self.categoriesArray, id: \.self) { category in
+                            Button {
+                                  filterProducts(category: category)
+                              } label: {
+                                  VStack {
+                                      Image(category)
+                                          .resizable()
+                                          .aspectRatio(contentMode: .fill)
+                                          .frame(width: 24, height: 24)
+                                      Text(category).font(.caption2).foregroundStyle(Color.white)
+                                  }
+                                  .frame(width: 80, height: 80)
+                                  .background(RoundedRectangle(cornerRadius: 2).fill(Color("purple")))
+                              }
+                        }
+                    }
+                }
+                .frame(width: .infinity, height: 84)
+                
                 NavigationView {
                     ScrollView {
                         Image("banner")
@@ -37,7 +75,7 @@ struct ProductsView: View {
                             .shadow(color: Color(.sRGBLinear, white: 0, opacity: 0.05), radius: 5, x: 0, y: 0)
 
                         LazyVGrid(columns: self.columns) {
-                            ForEach(self.productsArray, id: \.self) { product in
+                            ForEach(self.filterdProductsArray, id: \.self) { product in
                                 VStack(alignment: .center) {
                                     NavigationLink {
                                         VStack {
@@ -115,7 +153,13 @@ struct ProductsView: View {
                                                              description: product.value(forKey: "description") as! String)
                                     
                                     productsArray.append(newProduct)
+                                    filterdProductsArray.append(newProduct)
                                 }
+                            }
+                            await Shoppingservice.getCategories {
+                                categories in
+                                categoriesArray = categories
+                                categoriesArray.append("all")
                             }
                         }
                         .padding([.all, .trailing], 8)
