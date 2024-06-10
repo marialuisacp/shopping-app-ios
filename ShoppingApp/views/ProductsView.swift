@@ -27,6 +27,10 @@ struct ProductsView: View {
         }
     }
     
+    func goToCart() {
+        print("Go to cart")
+    }
+    
     var body: some View {
         VStack(alignment: .leading) {
             Image("degrade")
@@ -34,10 +38,25 @@ struct ProductsView: View {
                 .aspectRatio(contentMode: .fill)
                 .frame(minWidth: 0, maxWidth: .infinity, maxHeight: 0)
             VStack(alignment: .leading) {
-                Image("logo")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(minWidth: 0, maxWidth: 200)
+                HStack {
+                    Image("logo")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(minWidth: 0, maxWidth: 200)
+                    Spacer()
+                    Button {
+                          goToCart()
+                    } label: {
+                        VStack {
+                            Image("cart")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 24, height: 24)
+                        }
+                        .frame(width: 40, height: 40)
+                        .background(RoundedRectangle(cornerRadius: 8).fill(Color(.sRGBLinear, white: 1, opacity: 0.1)))
+                    }
+                }
                 Text("Your one-stop online shop for all your needs!")
                     .font(.caption)
                     .foregroundStyle(Color.white)
@@ -50,17 +69,17 @@ struct ProductsView: View {
                         ForEach(self.categoriesArray, id: \.self) { category in
                             Button {
                                   filterProducts(category: category)
-                              } label: {
-                                  VStack {
+                            } label: {
+                                VStack {
                                       Image(category)
                                           .resizable()
                                           .aspectRatio(contentMode: .fill)
                                           .frame(width: 24, height: 24)
                                       Text(category).font(.caption2).foregroundStyle(Color.white)
-                                  }
-                                  .frame(width: 80, height: 80)
-                                  .background(RoundedRectangle(cornerRadius: 2).fill(Color("purple")))
-                              }
+                                }
+                                .frame(width: 80, height: 80)
+                                .background(RoundedRectangle(cornerRadius: 2).fill(Color("purple")))
+                            }
                         }
                     }
                 }
