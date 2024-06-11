@@ -1,4 +1,5 @@
 import Foundation
+import SwiftUI
 
 struct Utils {
     public static func buildNewProductFromObject(product: NSObject) -> Product {
@@ -28,5 +29,9 @@ struct Utils {
             isPromotion: false,
             valuePromotion: 0
         )
+    }
+    
+    public static func colorRGB(r: Double, g: Double, b: Double, opacity: Double) -> Color {
+        return Color(.sRGBLinear, red: r/255, green: g/255, blue: b/255, opacity: opacity)
     }
 }
