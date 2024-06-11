@@ -18,8 +18,8 @@ struct ShoppingHeader: View {
                     .aspectRatio(contentMode: .fit)
                     .frame(minWidth: 0, maxWidth: 200)
                 Spacer()
-                Button {
-                      goToCart()
+                NavigationLink {
+                    CartView()
                 } label: {
                     VStack {
                         Image("cart")
