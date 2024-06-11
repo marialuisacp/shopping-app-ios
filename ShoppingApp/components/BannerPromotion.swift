@@ -2,7 +2,7 @@ import SwiftUI
 
 struct BannerPromotion: View {
     var body: some View {
-        Image("banner")
+        Image("banner2")
             .resizable()
             .aspectRatio(contentMode: .fill)
             .frame(minWidth: 0, maxWidth: .infinity, maxHeight: 460)
