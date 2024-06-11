@@ -1,36 +1,27 @@
+import Foundation
 import SwiftUI
 
 struct ProductDetailView: View {
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @Environment(\.managedObjectContext) private var viewContext
-    
     var product: Product
-    var buttonBack : some View { Button(action: {
-        self.presentationMode.wrappedValue.dismiss()
-        }) {
-            Image("backFeatured")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 24, height: 24)
-        }
-    }
     var bgColor: Color = Utils.colorRGB(r: 168, g:43, b: 129, opacity: 0.1)
     
     func addProductToCart(product: Product) {
         let newProduct = CartItem(context: viewContext)
         newProduct.id = Int64(product.id)
-        newProduct.text = ""
+        newProduct.text = product.description
         newProduct.category = product.category
         newProduct.price = product.price
         newProduct.imageUrl = product.imageUrl
         newProduct.isPromotion = product.isPromotion
         newProduct.valuePromotion = Int64(product.valuePromotion)
+        newProduct.timestamp = Date()
 
         do {
             try viewContext.save()
         } catch {
             let nsError = error as NSError
-            fatalError("Unresolved error when try save product on cart:: \(nsError), \(nsError.userInfo)")
+            fatalError("Unresolved error when try save product on cart:: \(nsError)")
         }
     }
     
@@ -77,6 +68,6 @@ struct ProductDetailView: View {
             .shadow(color: Color(.sRGBLinear, white: 0, opacity: 0.03), radius: 5, x: 0, y: -10)
         }
         .navigationBarBackButtonHidden(true)
-        .navigationBarItems(leading: buttonBack)
+        .navigationBarItems(leading: CustomBackButton())
     }
 }
