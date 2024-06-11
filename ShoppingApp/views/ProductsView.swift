@@ -5,6 +5,8 @@ struct ProductsView: View {
     @State var productsArray: [Product] = [Product]()
     @State var filterdProductsArray: [Product] = [Product]()
     @State var categoriesArray: [String] = [String]()
+    @State var productSelected: Product? = nil
+    
     var cardWidth = UIScreen.main.bounds.width / 2.2
     var columns: [GridItem] = [
         GridItem(.adaptive(minimum: 100, maximum: UIScreen.main.bounds.width / 2)),
@@ -44,9 +46,11 @@ struct ProductsView: View {
                         LazyVGrid(columns: self.columns) {
                             ForEach(self.filterdProductsArray, id: \.self) { product in
                                 VStack(alignment: .center) {
-                                    NavigationLink {
-                                        ProductDetailView(product: product)
-                                    } label: {
+                                    NavigationLink(
+                                        destination: ProductDetailView(product: product),
+                                        tag: product,
+                                        selection: $productSelected
+                                    ) {
                                         ProductItem(product: product)
                                     }
                                 }
