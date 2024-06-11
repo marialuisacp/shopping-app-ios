@@ -29,7 +29,7 @@ struct ProductItem: View {
                         .foregroundStyle(Color("primary"))
                         .multilineTextAlignment(.leading)
                         .lineLimit(1)
-                    Text(product.categoty).font(.caption).foregroundStyle(Color("secondary"))
+                    Text(product.category).font(.caption).foregroundStyle(Color("secondary"))
                     Text("$ " + String(format: "%.2f", product.price)).foregroundStyle(Color.black)
                     
                     Divider().background(Color.black)

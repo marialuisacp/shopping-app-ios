@@ -19,7 +19,7 @@ struct ProductsView: View {
             filterdProductsArray = productsArray
         } else {
             let filteredProducts = productsArray.filter { product in
-                if product.categoty == category {
+                if product.category == category {
                     return true
                 } else {
                     return false
