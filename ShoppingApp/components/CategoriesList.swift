@@ -13,31 +13,38 @@ struct CategoriesList: View {
                         filterProducts(category)
                     } label: {
                         VStack {
-                              Image(category)
-                                  .resizable()
-                                  .aspectRatio(contentMode: .fill)
-                                  .frame(width: 24, height: 24)
-                            Text(category)
-                                .font(.caption2.bold())
-                                .foregroundStyle(Color.white)
-                                .padding(.horizontal, 4)
+                        VStack {
+                            Image(category)
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 26, height: 26)
                         }
-                        .frame(width: 80, height: 80)
+                        .frame(width: 48, height: 48)
                         .background(
                             RoundedRectangle(cornerRadius: 8)
-                                .fill(
-                                    LinearGradient(
-                                        gradient: 
-                                            Gradient(colors: [Color("primary"), Color("purple2")]),
-                                        startPoint: .topLeading,
-                                        endPoint: .bottomTrailing
-                                    )
-                        ))
+                              .fill(
+                                  LinearGradient(
+                                      gradient:
+                                          Gradient(colors: [Color("purple"), Color("purple2")]),
+                                      startPoint: .topLeading,
+                                      endPoint: .bottomTrailing
+                                  )
+                              ))
+                            Text(category)
+                                .font(.caption2.bold())
+                                .foregroundStyle(Color.black)
+                                .padding(.horizontal, 4)
+                                .multilineTextAlignment(.center)
+                                .lineLimit(1)
+                        }
+                        .frame(width: 80, height: 80)
                     }
                 }
             }
         }
         .frame(width: .infinity, height: 84)
+        .padding(.top, 8)
+        .scrollIndicators(.hidden)
         .task {
             await Shoppingservice.getCategories {
                 categories in
