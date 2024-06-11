@@ -34,8 +34,8 @@ struct ProductsView: View {
             VStack(alignment: .leading) {
                 ShoppingHeader()
                 VStack(alignment: .leading) {
-                    CategoriesList(filterProducts: filterProducts, categoriesArray: categoriesArray)
                     ScrollView {
+                        CategoriesList(filterProducts: filterProducts, categoriesArray: categoriesArray)
                         BannerPromotion()
                         LazyVGrid(columns: self.columns) {
                             ForEach(self.filterdProductsArray, id: \.self) { product in
