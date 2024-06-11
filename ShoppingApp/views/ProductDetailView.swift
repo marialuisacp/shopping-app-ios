@@ -2,7 +2,8 @@ import SwiftUI
 
 struct ProductDetailView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-
+    @Environment(\.managedObjectContext) private var viewContext
+    
     var product: Product
     var buttonBack : some View { Button(action: {
         self.presentationMode.wrappedValue.dismiss()
@@ -14,6 +15,25 @@ struct ProductDetailView: View {
         }
     }
     var bgColor: Color = Utils.colorRGB(r: 168, g:43, b: 129, opacity: 0.1)
+    
+    func addProductToCart(product: Product) {
+        let newProduct = CartItem(context: viewContext)
+        newProduct.id = Int64(product.id)
+        newProduct.text = ""
+        newProduct.category = product.category
+        newProduct.price = product.price
+        newProduct.imageUrl = product.imageUrl
+        newProduct.isPromotion = product.isPromotion
+        newProduct.valuePromotion = Int64(product.valuePromotion)
+
+        do {
+            try viewContext.save()
+        } catch {
+            let nsError = error as NSError
+            fatalError("Unresolved error when try save product on cart:: \(nsError), \(nsError.userInfo)")
+        }
+    }
+    
     var body: some View {
         VStack {
             VStack(alignment: .center) {
@@ -37,9 +57,17 @@ struct ProductDetailView: View {
                         .background(Rectangle().fill(Color("secondary")))
                 }
                 Divider().background(Color.black).padding(.trailing, 128)
-                Text(product.categoty).font(.caption).foregroundStyle(Color("secondary"))
+                Text(product.category).font(.caption).foregroundStyle(Color("secondary"))
                 Text(product.description).font(.caption)
                 Spacer()
+                Button {
+                    addProductToCart(product: product)
+                } label: {
+                    Text("Add to cart").font(Font.body.weight(.bold)).foregroundStyle(Color.white)
+                        .frame(maxWidth: .infinity)
+                }
+                .frame(width: .infinity, height: 32)
+                .background(RoundedRectangle(cornerRadius: 8).fill(Color("primary")))
             }
             .padding(.all, 24)
             .frame(width: .infinity)

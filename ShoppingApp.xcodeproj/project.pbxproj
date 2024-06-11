@@ -14,7 +14,7 @@
 		3F7AA22B2C17CA0400C6AA7D /* ProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7AA22A2C17CA0400C6AA7D /* ProductDetailView.swift */; };
 		3F7AA22D2C17CAA100C6AA7D /* ProductItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7AA22C2C17CAA100C6AA7D /* ProductItem.swift */; };
 		3F7AA2302C17CB4F00C6AA7D /* Methods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7AA22F2C17CB4F00C6AA7D /* Methods.swift */; };
-		3FB234EE2C13BB5A00E2AAF1 /* ShoppingAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB234ED2C13BB5A00E2AAF1 /* ShoppingAppApp.swift */; };
+		3FB234EE2C13BB5A00E2AAF1 /* ShoppingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB234ED2C13BB5A00E2AAF1 /* ShoppingApp.swift */; };
 		3FB234F32C13BB5A00E2AAF1 /* ShoppingApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3FB234F12C13BB5A00E2AAF1 /* ShoppingApp.xcdatamodeld */; };
 		3FB234F52C13BB5A00E2AAF1 /* ProductsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB234F42C13BB5A00E2AAF1 /* ProductsView.swift */; };
 		3FB234F72C13BB5B00E2AAF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FB234F62C13BB5B00E2AAF1 /* Assets.xcassets */; };
@@ -54,7 +54,7 @@
 		3F7AA22C2C17CAA100C6AA7D /* ProductItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductItem.swift; sourceTree = "<group>"; };
 		3F7AA22F2C17CB4F00C6AA7D /* Methods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Methods.swift; sourceTree = "<group>"; };
 		3FB234EA2C13BB5A00E2AAF1 /* ShoppingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoppingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		3FB234ED2C13BB5A00E2AAF1 /* ShoppingAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingAppApp.swift; sourceTree = "<group>"; };
+		3FB234ED2C13BB5A00E2AAF1 /* ShoppingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingApp.swift; sourceTree = "<group>"; };
 		3FB234F22C13BB5A00E2AAF1 /* ShoppingApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ShoppingApp.xcdatamodel; sourceTree = "<group>"; };
 		3FB234F42C13BB5A00E2AAF1 /* ProductsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsView.swift; sourceTree = "<group>"; };
 		3FB234F62C13BB5B00E2AAF1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -144,7 +144,7 @@
 				3FB2352A2C1626AD00E2AAF1 /* config */,
 				3FB235272C16093300E2AAF1 /* types */,
 				3FB235212C15F53700E2AAF1 /* services */,
-				3FB234ED2C13BB5A00E2AAF1 /* ShoppingAppApp.swift */,
+				3FB234ED2C13BB5A00E2AAF1 /* ShoppingApp.swift */,
 				3FB234F62C13BB5B00E2AAF1 /* Assets.xcassets */,
 				3FB234F82C13BB5B00E2AAF1 /* ShoppingApp.entitlements */,
 				3FB234F12C13BB5A00E2AAF1 /* ShoppingApp.xcdatamodeld */,
@@ -348,7 +348,7 @@
 				3F7AA2252C17C68900C6AA7D /* ShoppingHeader.swift in Sources */,
 				3F7AA2222C17BD3900C6AA7D /* CartService.swift in Sources */,
 				3F7AA22B2C17CA0400C6AA7D /* ProductDetailView.swift in Sources */,
-				3FB234EE2C13BB5A00E2AAF1 /* ShoppingAppApp.swift in Sources */,
+				3FB234EE2C13BB5A00E2AAF1 /* ShoppingApp.swift in Sources */,
 				3FB234F32C13BB5A00E2AAF1 /* ShoppingApp.xcdatamodeld in Sources */,
 				3FB234F52C13BB5A00E2AAF1 /* ProductsView.swift in Sources */,
 				3FB2352C2C1626BC00E2AAF1 /* constants.swift in Sources */,

@@ -1,8 +1,7 @@
 import SwiftUI
 
 @main
-struct ShoppingAppApp: App {
-    
+struct ShoppingApp: App {
     var body: some Scene {
         WindowGroup {
             ProductsView()

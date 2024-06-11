@@ -3,14 +3,14 @@ public class Product: Hashable {
         return lhs.id == rhs.id
         && lhs.title == rhs.title
         && lhs.price == rhs.price
-        && lhs.categoty == rhs.categoty
+        && lhs.category == rhs.category
         && lhs.imageUrl == rhs.imageUrl
         && lhs.description == rhs.description
         && lhs.isPromotion == rhs.isPromotion
         && lhs.valuePromotion == rhs.valuePromotion
     }
     
-    var categoty: String
+    var category: String
     var id: Int
     var imageUrl: String
     var price: Double
@@ -32,7 +32,7 @@ public class Product: Hashable {
         self.id = id
         self.title = title
         self.price = price
-        self.categoty = categoty
+        self.category = categoty
         self.imageUrl = imageUrl
         self.description = description
         self.isPromotion = isPromotion
@@ -43,7 +43,7 @@ public class Product: Hashable {
         hasher.combine(id)
         hasher.combine(title)
         hasher.combine(price)
-        hasher.combine(categoty)
+        hasher.combine(category)
         hasher.combine(imageUrl)
         hasher.combine(description)
         hasher.combine(isPromotion)
