@@ -37,6 +37,11 @@ struct ProductsView: View {
                     ScrollView {
                         CategoriesList(filterProducts: filterProducts, categoriesArray: categoriesArray)
                         BannerPromotion()
+                        NavigationLink {
+                            ModuleViewControllerWrapper()
+                        } label: {
+                            Text("open view controller")
+                        }
                         LazyVGrid(columns: self.columns) {
                             ForEach(self.filterdProductsArray, id: \.self) { product in
                                 VStack(alignment: .center) {
