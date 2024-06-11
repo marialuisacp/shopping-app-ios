@@ -18,6 +18,9 @@
 		3F7AA2342C17F64500C6AA7D /* CustomBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7AA2332C17F64500C6AA7D /* CustomBackButton.swift */; };
 		3F7AA2362C17FF3900C6AA7D /* CartItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7AA2352C17FF3900C6AA7D /* CartItemView.swift */; };
 		3F7AA2382C180D0E00C6AA7D /* CartIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7AA2372C180D0E00C6AA7D /* CartIcon.swift */; };
+		3F7AA23A2C18BA0300C6AA7D /* ModuleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7AA2392C18BA0300C6AA7D /* ModuleViewController.swift */; };
+		3F7AA23C2C18BC2600C6AA7D /* ModuleViewControllerWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7AA23B2C18BC2600C6AA7D /* ModuleViewControllerWrapper.swift */; };
+		3F7AA23E2C18BC9500C6AA7D /* Module.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F7AA23D2C18BC9500C6AA7D /* Module.storyboard */; };
 		3FB234EE2C13BB5A00E2AAF1 /* ShoppingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB234ED2C13BB5A00E2AAF1 /* ShoppingApp.swift */; };
 		3FB234F32C13BB5A00E2AAF1 /* ShoppingApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3FB234F12C13BB5A00E2AAF1 /* ShoppingApp.xcdatamodeld */; };
 		3FB234F52C13BB5A00E2AAF1 /* ProductsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB234F42C13BB5A00E2AAF1 /* ProductsView.swift */; };
@@ -61,6 +64,9 @@
 		3F7AA2332C17F64500C6AA7D /* CustomBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBackButton.swift; sourceTree = "<group>"; };
 		3F7AA2352C17FF3900C6AA7D /* CartItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemView.swift; sourceTree = "<group>"; };
 		3F7AA2372C180D0E00C6AA7D /* CartIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartIcon.swift; sourceTree = "<group>"; };
+		3F7AA2392C18BA0300C6AA7D /* ModuleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleViewController.swift; sourceTree = "<group>"; };
+		3F7AA23B2C18BC2600C6AA7D /* ModuleViewControllerWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleViewControllerWrapper.swift; sourceTree = "<group>"; };
+		3F7AA23D2C18BC9500C6AA7D /* Module.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Module.storyboard; sourceTree = "<group>"; };
 		3FB234EA2C13BB5A00E2AAF1 /* ShoppingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoppingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FB234ED2C13BB5A00E2AAF1 /* ShoppingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingApp.swift; sourceTree = "<group>"; };
 		3FB234F22C13BB5A00E2AAF1 /* ShoppingApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ShoppingApp.xcdatamodel; sourceTree = "<group>"; };
@@ -221,6 +227,9 @@
 				3FDA48882C166B9000EA4A1D /* LaunchView.storyboard */,
 				3F7AA22A2C17CA0400C6AA7D /* ProductDetailView.swift */,
 				3F7AA2312C17F51C00C6AA7D /* CartView.swift */,
+				3F7AA2392C18BA0300C6AA7D /* ModuleViewController.swift */,
+				3F7AA23B2C18BC2600C6AA7D /* ModuleViewControllerWrapper.swift */,
+				3F7AA23D2C18BC9500C6AA7D /* Module.storyboard */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -331,6 +340,7 @@
 			files = (
 				3FDA48892C166B9000EA4A1D /* LaunchView.storyboard in Resources */,
 				3FB234FB2C13BB5B00E2AAF1 /* Preview Assets.xcassets in Resources */,
+				3F7AA23E2C18BC9500C6AA7D /* Module.storyboard in Resources */,
 				3FB234F72C13BB5B00E2AAF1 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -357,7 +367,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F7AA22D2C17CAA100C6AA7D /* ProductItem.swift in Sources */,
+				3F7AA23C2C18BC2600C6AA7D /* ModuleViewControllerWrapper.swift in Sources */,
 				3F7AA2362C17FF3900C6AA7D /* CartItemView.swift in Sources */,
+				3F7AA23A2C18BA0300C6AA7D /* ModuleViewController.swift in Sources */,
 				3F7AA2252C17C68900C6AA7D /* ShoppingHeader.swift in Sources */,
 				3F7AA2222C17BD3900C6AA7D /* CartService.swift in Sources */,
 				3F7AA22B2C17CA0400C6AA7D /* ProductDetailView.swift in Sources */,
