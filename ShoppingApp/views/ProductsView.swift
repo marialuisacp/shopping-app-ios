@@ -28,11 +28,7 @@ struct ProductsView: View {
             filterdProductsArray = filteredProducts
         }
     }
-    
-    func goToCart() {
-        print("Go to cart")
-    }
-    
+        
     var body: some View {
         NavigationView {
             VStack(alignment: .leading) {

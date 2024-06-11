@@ -10,6 +10,7 @@ struct ProductDetailView: View {
         let newProduct = CartItem(context: viewContext)
         newProduct.id = Int64(product.id)
         newProduct.text = product.description
+        newProduct.title = product.title
         newProduct.category = product.category
         newProduct.price = product.price
         newProduct.imageUrl = product.imageUrl

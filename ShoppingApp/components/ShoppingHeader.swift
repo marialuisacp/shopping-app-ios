@@ -1,11 +1,6 @@
 import SwiftUI
 
 struct ShoppingHeader: View {
-    
-    func goToCart() {
-        print("Go to cart")
-    }
-    
     var body: some View {
         Image("degrade")
             .resizable()
