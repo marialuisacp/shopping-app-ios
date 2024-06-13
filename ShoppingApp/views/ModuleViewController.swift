@@ -1,20 +1,24 @@
 import Foundation
-import UIKit
-//import React
+import React
 
 class ModuleViewController: UIViewController {
-     override func viewDidLoad() {
-         super.viewDidLoad()
-     }
-    
-//    func sourceURL(for bridge: RCTBridge!) -> URL! {
-//        //#if DEBUG
-//        //return RCTBundleURLProvider.sharedSettings().jsBundleURL(forBundleRoot: "index", fallbackExtension:nil)
-//        //#else
-//        //        return Bundle.main.url(forResource:"main", withExtension:"jsbundle")
-//        //#endif
-//        return Bundle.main.url(forResource:"main", withExtension:"jsbundle")
+//    init(){
+//        super.init(nibName: nil, bundle: nil)
 //    }
-}
+//    
+//    required init?(coder: NSCoder) {
+//        super.init(coder: coder);
+//        //fatalError("Always initialize ReactNativeScreen with init")
+//    }
 
+    override func viewDidLoad() {
+        if let bridge = BridgeManager.shared.bridge {
+            self.view = RCTRootView(
+                bridge: bridge,
+                moduleName: "ShoppingAppModuleRN",
+                initialProperties: nil
+            )
+        }
+    }
+}
 
