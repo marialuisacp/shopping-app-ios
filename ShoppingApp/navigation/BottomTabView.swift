@@ -26,7 +26,7 @@ struct BottomTabView: View {
             .tag(1)
             
             NavigationStack() {
-               CartView()
+                CartView(isFromBottomTab: true)
             }
             .tabItem {
                 Text("Cart")

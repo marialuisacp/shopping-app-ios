@@ -6,9 +6,16 @@ struct CartView: View {
         sortDescriptors: [NSSortDescriptor(keyPath: \CartItem.timestamp, ascending: true)],
         animation: .default)
     private var cartItems: FetchedResults<CartItem>
+    var isFromBottomTab: Bool = false
     
     var body: some View {
         VStack(alignment: .center) {
+            if isFromBottomTab {
+                Image("logoColor")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(minWidth: 0, maxWidth: 180)
+            }
             List {
                 ForEach(Array(cartItems.enumerated()), id: \.element) { index, cartItem in
                     CartItemView(cartItem: cartItem)
@@ -18,14 +25,16 @@ struct CartView: View {
                     total + item.price
                 }))
             }
-            .toolbar {
-                EditButton()
+            .toolbar{
+                if !isFromBottomTab {
+                    EditButton()
+                }
             }
         }
         .navigationBarBackButtonHidden(true)
-        .navigationBarItems(leading: CustomBackButton())
-        .navigationTitle("My Cart")
-        .background(Color("gray_100"))
+        .navigationBarItems(leading: !isFromBottomTab ? CustomBackButton() : nil)
+        .navigationTitle(!isFromBottomTab ? "My Cart" : "")
+        .background(Color.white)
     }
     
     private func deleteItems(offsets: IndexSet) {
