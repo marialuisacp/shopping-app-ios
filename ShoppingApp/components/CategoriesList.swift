@@ -21,7 +21,7 @@ struct CategoriesList: View {
                         }
                         .frame(width: 48, height: 48)
                         .background(
-                            RoundedRectangle(cornerRadius: 8)
+                            RoundedRectangle(cornerRadius: 24)
                               .fill(
                                   LinearGradient(
                                       gradient:

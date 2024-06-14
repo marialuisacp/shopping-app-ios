@@ -7,10 +7,6 @@ struct CartService {
         let result = CartService(inMemory: true)
         let viewContext = result.container.viewContext
 
-        for _ in 0..<10 {
-            var newProduct = CartItem(context: viewContext)
-        }
-        
         do {
             try viewContext.save()
         } catch {

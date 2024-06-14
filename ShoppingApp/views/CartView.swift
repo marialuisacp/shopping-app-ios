@@ -9,19 +9,23 @@ struct CartView: View {
     
     var body: some View {
         VStack(alignment: .center) {
-            
             List {
-                Text("My cart")
-                    .foregroundStyle(Color("primary"))
-                    .font(.headline)
                 ForEach(Array(cartItems.enumerated()), id: \.element) { index, cartItem in
                     CartItemView(cartItem: cartItem)
                 }
                 .onDelete(perform: deleteItems)
+                CartTotal(value: cartItems.reduce(0, { total, item in
+                    total + item.price
+                }))
+            }
+            .toolbar {
+                EditButton()
             }
         }
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading: CustomBackButton())
+        .navigationTitle("My Cart")
+        .background(Color("gray_100"))
     }
     
     private func deleteItems(offsets: IndexSet) {
