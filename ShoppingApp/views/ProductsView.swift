@@ -30,57 +30,48 @@ struct ProductsView: View {
     }
         
     var body: some View {
-        NavigationView {
-            VStack(alignment: .leading) {
-                ShoppingHeader()
-                VStack(alignment: .leading) {
-                    ScrollView {
-                        CategoriesList(filterProducts: filterProducts, categoriesArray: categoriesArray)
-                        BannerPromotion()
-                        NavigationLink {
-                            ModuleViewControllerWrapper()
-                        } label: {
-                            Text("open view controller")
-                        }
-                        LazyVGrid(columns: self.columns) {
-                            ForEach(self.filterdProductsArray, id: \.self) { product in
-                                VStack(alignment: .center) {
-                                    NavigationLink(
-                                        destination: ProductDetailView(product: product),
-                                        tag: product,
-                                        selection: $productSelected
-                                    ) {
-                                        ProductItem(product: product)
-                                    }
-                                }
-                                .frame(width: cardWidth, height: 210)
-                                .background(
-                                    RoundedRectangle(
-                                        cornerRadius: 8)
-                                    .fill(Color.white)
-                                    .shadow(color: Color(.sRGBLinear, white: 0, opacity: 0.02), radius: 5, x: 0, y: 0)
-                                )
-                                .border(Color("gray_300"), width: 1)
+        VStack(alignment: .leading) {
+            ShoppingHeader()
+            ScrollView {
+                CategoriesList(filterProducts: filterProducts, categoriesArray: categoriesArray)
+                BannerPromotion()
+                LazyVGrid(columns: self.columns) {
+                    ForEach(self.filterdProductsArray, id: \.self) { product in
+                        VStack(alignment: .center) {
+                            NavigationLink(
+                                destination: ProductDetailView(product: product),
+                                tag: product,
+                                selection: $productSelected
+                            ) {
+                                ProductItem(product: product)
                             }
                         }
-                        .task {
-                            productsArray = []
-                            filterdProductsArray = []
-                            await Shoppingservice.getProducts {
-                                products in
-                                for product in products {
-                                    let newProduct = Utils.buildNewProductFromObject(product: product);
-                                    productsArray.append(newProduct)
-                                    filterdProductsArray.append(newProduct)
-                                }
-                            }
-                        }
-                        .padding([.all, .trailing], 8)
+                        .frame(width: cardWidth, height: 210)
+                        .background(
+                            RoundedRectangle(
+                                cornerRadius: 8)
+                            .fill(Color.white)
+                            .shadow(color: Color(.sRGBLinear, white: 0, opacity: 0.02), radius: 5, x: 0, y: 0)
+                        )
+                        .border(Color("gray_300"), width: 1)
                     }
-                    .background(Color("gray_400"))
-                    .frame(width: .infinity)
                 }
+                .task {
+                    productsArray = []
+                    filterdProductsArray = []
+                    await Shoppingservice.getProducts {
+                        products in
+                        for product in products {
+                            let newProduct = Utils.buildNewProductFromObject(product: product);
+                            productsArray.append(newProduct)
+                            filterdProductsArray.append(newProduct)
+                        }
+                    }
+                }
+                .padding([.all, .trailing], 8)
             }
+            .background(Color("gray_400"))
+            .frame(width: .infinity)
         }
     }
 }

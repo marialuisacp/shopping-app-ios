@@ -12,7 +12,6 @@ struct ShoppingHeader: View {
             .resizable()
             .aspectRatio(contentMode: .fill)
             .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: 0)
-            
         VStack(alignment: .leading) {
             HStack {
                 Image("logo")
@@ -30,7 +29,9 @@ struct ShoppingHeader: View {
                 .font(.caption)
                 .foregroundStyle(Color.white)
         }
-        .padding(.top, -80)
+        .padding(.top, 0)
         .padding(.horizontal, 24)
+        .zIndex(1)
+        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: 100)
     }
 }
