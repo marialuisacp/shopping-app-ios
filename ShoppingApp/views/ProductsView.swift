@@ -53,7 +53,7 @@ struct ProductsView: View {
                             .fill(Color.white)
                             .shadow(color: Color(.sRGBLinear, white: 0, opacity: 0.02), radius: 5, x: 0, y: 0)
                         )
-                        .border(Color("gray_300"), width: 1)
+                        .border(Color("gray_400"), width: 1)
                     }
                 }
                 .task {
@@ -70,7 +70,7 @@ struct ProductsView: View {
                 }
                 .padding([.all, .trailing], 8)
             }
-            .background(Color("gray_400"))
+            .background(Color.white)
             .frame(width: .infinity)
         }
     }

@@ -10,7 +10,6 @@ struct ModuleViewControllerWrapper: UIViewControllerRepresentable {
     }
 
     func updateUIViewController(_ uiViewController: ModuleViewControllerWrapper.UIViewControllerType, context: UIViewControllerRepresentableContext<ModuleViewControllerWrapper>) {
-        
     }
 }
 

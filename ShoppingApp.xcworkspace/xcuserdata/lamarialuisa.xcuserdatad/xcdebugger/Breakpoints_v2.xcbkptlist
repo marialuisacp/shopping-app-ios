@@ -14,8 +14,8 @@
             filePath = "ShoppingApp/views/ModuleViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "15"
-            endingLineNumber = "15"
+            startingLineNumber = "6"
+            endingLineNumber = "6"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
             <Locations>
@@ -96,54 +96,6 @@
             endingLineNumber = "10"
             landmarkName = "loadReactNative(launchOptions:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "637C6DC5-A340-4A72-AEDE-6165A8C24B4D"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ShoppingApp/views/ModuleViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "11"
-            endingLineNumber = "11"
-            landmarkName = "init?(coder:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "637C6DC5-A340-4A72-AEDE-6165A8C24B4D - d28b73e511229440"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ShoppingApp.ModuleViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;ShoppingApp.ModuleViewController&gt;"
-                  moduleName = "ShoppingApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/lamarialuisa/workspace/my-projects/shopping-app-ios/ShoppingApp/ShoppingApp/views/ModuleViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "10"
-                  endingLineNumber = "10"
-                  offsetFromSymbolStart = "76">
-               </Location>
-               <Location
-                  uuid = "637C6DC5-A340-4A72-AEDE-6165A8C24B4D - d28b73e511229406"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ShoppingApp.ModuleViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;ShoppingApp.ModuleViewController&gt;"
-                  moduleName = "ShoppingApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/lamarialuisa/workspace/my-projects/shopping-app-ios/ShoppingApp/ShoppingApp/views/ModuleViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "12"
-                  endingLineNumber = "12"
-                  offsetFromSymbolStart = "180">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
