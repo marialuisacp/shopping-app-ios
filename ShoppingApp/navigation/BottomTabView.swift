@@ -33,7 +33,7 @@ struct BottomTabView: View {
                 Image(systemName: "cart")
                     .renderingMode(.template)
             }
-            .tag(1)
+            .tag(2)
         }
     }
 }
