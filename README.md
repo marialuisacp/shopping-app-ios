@@ -19,9 +19,27 @@ Shopping App iOS fetches product data from the [Fake Store API](https://fakestor
 
 ## Technologies
 
+The main technologies used in this project are:
 - Swift
 - SwiftUI
 - URLSession
+- CoreData
+- React Native Module
+
+![Swift UI description](./docs/01_swiftUI.png)
+
+In this project, SwiftUI was employed to design native components and screens for iOS, encompassing all primary interfaces. 
+
+Other Native Resources
+Alongside visual development, the app interacts with the store through requests to fetch products and product categories, facilitated by URLSession. 
+
+Persistence of shopping cart data is achieved using CoreData, ensuring seamless management and retention of user selections within the application.
+
+![React Native Module description](./docs/02_react_native_module.png)
+
+To explore the integration of React Native modules into the app, we developed an RN module that is accessible in [this repository](https://github.com/marialuisacp/shopping-app-module-rn).
+
+The module was integrated using RCTView in Swift, incorporating React Native libraries into the project. Additionally, a Bridge Manager was implemented to facilitate seamless communication between the native and React Native environments.
 
 ## Requirements
 

@@ -4,9 +4,9 @@ struct BannerPromotion: View {
     var body: some View {
         Image("banner2")
             .resizable()
+            .cornerRadius(8)
             .aspectRatio(contentMode: .fill)
-            .frame(minWidth: 0, maxWidth: .infinity, maxHeight: 460)
             .padding([.all, .trailing], 12)
-            .shadow(color: Color(.sRGBLinear, white: 0, opacity: 0.05), radius: 5, x: 0, y: 0)
+            .frame(minWidth: 0, maxWidth: .infinity, maxHeight: 460)
     }
 }
