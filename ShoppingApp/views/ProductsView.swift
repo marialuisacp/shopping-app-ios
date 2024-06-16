@@ -37,23 +37,9 @@ struct ProductsView: View {
                 BannerPromotion()
                 LazyVGrid(columns: self.columns) {
                     ForEach(self.filterdProductsArray, id: \.self) { product in
-                        VStack(alignment: .center) {
-                            NavigationLink(
-                                destination: ProductDetailView(product: product),
-                                tag: product,
-                                selection: $productSelected
-                            ) {
-                                ProductItem(product: product)
-                            }
-                        }
-                        .frame(width: cardWidth, height: 210)
-                        .background(
-                            RoundedRectangle(
-                                cornerRadius: 8)
-                            .fill(Color.white)
-                            .shadow(color: Color(.sRGBLinear, white: 0, opacity: 0.02), radius: 5, x: 0, y: 0)
-                        )
-                        .border(Color("gray_400"), width: 1)
+                        ProductItem(product: product,
+                        productSelected: $productSelected,
+                        cardWidth: cardWidth)
                     }
                 }
                 .task {

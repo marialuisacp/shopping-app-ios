@@ -7,7 +7,10 @@ class ModuleViewController: UIViewController {
             self.view = RCTRootView(
                 bridge: bridge,
                 moduleName: "ShoppingAppModuleRN",
-                initialProperties: nil
+                initialProperties: [
+                    "type": "screen",
+                    "value": "offers"
+                ]
             )
         }
     }

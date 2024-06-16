@@ -2,47 +2,25 @@ import SwiftUI
 
 struct ProductItem: View {
     var product: Product
-
+    var productSelected: Binding<Product?>
+    var cardWidth: CGFloat
+    
     var body: some View {
         VStack(alignment: .center) {
-            if product.isPromotion {
-                Text("-" + String(product.valuePromotion) + "%").foregroundStyle(Color.white).font(Font.caption2.weight(.bold))
-                    .frame(width: 40, height: 12)
-                    .background(Rectangle().fill(Color("secondary")))
-            } else {
-                Text("").foregroundStyle(Color.white).font(Font.caption2.weight(.bold))
-                    .frame(width: 40, height: 12)
+            NavigationLink(
+                destination: ProductDetailView(product: product),
+                tag: product,
+                selection: productSelected
+            ) {
+                ProductItemContent(product: product)
             }
-            
-            AsyncImage(url: URL(string: product.imageUrl)) { image in
-                image.resizable().aspectRatio(contentMode: .fit)
-            } placeholder: {
-                ProgressView()
-            }
-            .frame(width: 80, height: 80)
-            .background(Rectangle().fill(Color.white))
-            
-            VStack(alignment: .leading) {
-                VStack(alignment: .leading) {
-                    Text(product.title)
-                        .font(.caption)
-                        .foregroundStyle(Color("primary"))
-                        .multilineTextAlignment(.leading)
-                        .lineLimit(1)
-                    Text(product.category).font(.caption).foregroundStyle(Color("secondary"))
-                    Text("$ " + String(format: "%.2f", product.price)).foregroundStyle(Color.black)
-                    
-                    Divider().background(Color.black)
-                    
-                    Text(product.description)
-                        .font(.caption2)
-                        .foregroundStyle(Color.gray)
-                        .multilineTextAlignment(.leading)
-                        .lineLimit(3)
-                }
-                .padding([.horizontal, .trailing], 8)
-            }
-            .background(Color("gray_200"))
         }
+        .frame(width: cardWidth, height: 210)
+        .background(
+            RoundedRectangle(cornerRadius: 24)
+                .fill(Color.white)
+            .border(Color("gray_400"), width: 1)
+            .shadow(color: Color(.sRGBLinear, white: 0, opacity: 0.02), radius: 5, x: 0, y: 0)
+        )
     }
 }

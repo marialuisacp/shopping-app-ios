@@ -26,18 +26,27 @@ target 'ShoppingApp' do
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )
 
+  target 'ShoppingAppWidgetExtension' do
+    inherit! :complete
+    # Pods for testing
+  end
+  
   target 'ShoppingAppTests' do
     inherit! :complete
     # Pods for testing
   end
 
   post_install do |installer|
-    # https://github.com/facebook/react-native/blob/main/packages/react-native/scripts/react_native_pods.rb#L197-L202
     react_native_post_install(
       installer,
       config[:reactNativePath],
       :mac_catalyst_enabled => false,
       # :ccache_enabled => true
     )
+    installer.pods_project.targets.each do |target|
+        target.build_configurations.each do |config|
+          config.build_settings['APPLICATION_EXTENSION_API_ONLY'] = 'NO'
+        end
+      end
   end
 end
