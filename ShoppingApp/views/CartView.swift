@@ -7,34 +7,52 @@ struct CartView: View {
         animation: .default)
     private var cartItems: FetchedResults<CartItem>
     var isFromBottomTab: Bool = false
+    let paymentHandler = PaymentHandler()
     
-    var body: some View {
-        VStack(alignment: .center) {
-            if isFromBottomTab {
-                Image("logoColor")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(minWidth: 0, maxWidth: 180)
-            }
-            List {
-                ForEach(Array(cartItems.enumerated()), id: \.element) { index, cartItem in
-                    CartItemView(cartItem: cartItem)
-                }
-                .onDelete(perform: deleteItems)
-                CartTotal(value: cartItems.reduce(0, { total, item in
-                    total + item.price
-                }))
-            }
-            .toolbar{
-                if !isFromBottomTab {
-                    EditButton()
-                }
+    func startPaymentProcess (total: Double) {
+        paymentHandler.startPayment(total: total) { (success) in
+            if success {
+                print(success)
+                //self.performSegue(withIdentifier: "Confirmation", sender: self)
             }
         }
-        .navigationBarBackButtonHidden(true)
-        .navigationBarItems(leading: !isFromBottomTab ? CustomBackButton() : nil)
-        .navigationTitle(!isFromBottomTab ? "My Cart" : "")
-        .background(Color.white)
+    }
+    
+    var body: some View {
+        VStack {
+            VStack(alignment: .center) {
+                if isFromBottomTab {
+                    Image("logoColor")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(minWidth: 0, maxWidth: 180)
+                }
+                List {
+                    ForEach(Array(cartItems.enumerated()), id: \.element) { index, cartItem in
+                        CartItemView(cartItem: cartItem)
+                    }
+                    .onDelete(perform: deleteItems)
+                    Button {
+                        startPaymentProcess(total: cartItems.reduce(0, { total, item in
+                            total + item.price
+                        }))
+                    } label: {
+                        CartTotal(value: cartItems.reduce(0, { total, item in
+                            total + item.price
+                        }))
+                    }
+                }
+                .toolbar{
+                    if !isFromBottomTab {
+                        EditButton()
+                    }
+                }
+            }
+            .navigationBarBackButtonHidden(true)
+            .navigationBarItems(leading: !isFromBottomTab ? CustomBackButton() : nil)
+            .navigationTitle(!isFromBottomTab ? "My Cart" : "")
+            .background(Color.white)
+        }
     }
     
     private func deleteItems(offsets: IndexSet) {
