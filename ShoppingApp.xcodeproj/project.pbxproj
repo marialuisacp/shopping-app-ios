@@ -35,6 +35,9 @@
 		3F7AA23A2C18BA0300C6AA7D /* ModuleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7AA2392C18BA0300C6AA7D /* ModuleViewController.swift */; };
 		3F7AA23C2C18BC2600C6AA7D /* ModuleViewControllerWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7AA23B2C18BC2600C6AA7D /* ModuleViewControllerWrapper.swift */; };
 		3F7AA23E2C18BC9500C6AA7D /* Module.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F7AA23D2C18BC9500C6AA7D /* Module.storyboard */; };
+		3F81FA2E2C9A1CEF00202C01 /* ShoppingWatchExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F81FA2D2C9A1CEF00202C01 /* ShoppingWatchExtension.swift */; };
+		3F81FA302C9A1CEF00202C01 /* ShoppingWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F81FA2F2C9A1CEF00202C01 /* ShoppingWatch.swift */; };
+		3F81FA3C2C9A1E1700202C01 /* ShoppingWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F81FA3B2C9A1E1700202C01 /* ShoppingWatchApp.swift */; };
 		3F9DF3562C28FA2C00AB9E97 /* PaymentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9DF3552C28FA2C00AB9E97 /* PaymentHandler.swift */; };
 		3F9DF3582C28FA4700AB9E97 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9DF3572C28FA4700AB9E97 /* Configuration.swift */; };
 		3FB234EE2C13BB5A00E2AAF1 /* ShoppingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB234ED2C13BB5A00E2AAF1 /* ShoppingApp.swift */; };
@@ -126,6 +129,12 @@
 		3F7AA23B2C18BC2600C6AA7D /* ModuleViewControllerWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleViewControllerWrapper.swift; sourceTree = "<group>"; };
 		3F7AA23D2C18BC9500C6AA7D /* Module.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Module.storyboard; sourceTree = "<group>"; };
 		3F7AA2412C190DFE00C6AA7D /* ShoppingApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ShoppingApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		3F81FA2B2C9A1CEF00202C01 /* ShoppingWatch.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.extensionkit-extension"; includeInIndex = 0; path = ShoppingWatch.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F81FA2D2C9A1CEF00202C01 /* ShoppingWatchExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingWatchExtension.swift; sourceTree = "<group>"; };
+		3F81FA2F2C9A1CEF00202C01 /* ShoppingWatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingWatch.swift; sourceTree = "<group>"; };
+		3F81FA312C9A1CEF00202C01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F81FA392C9A1E1700202C01 /* ShoppingWatchApp.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShoppingWatchApp.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F81FA3B2C9A1E1700202C01 /* ShoppingWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingWatchApp.swift; sourceTree = "<group>"; };
 		3F9DF3552C28FA2C00AB9E97 /* PaymentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentHandler.swift; sourceTree = "<group>"; };
 		3F9DF3572C28FA4700AB9E97 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		3FB234EA2C13BB5A00E2AAF1 /* ShoppingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoppingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -161,6 +170,20 @@
 				3F2367FF2C1D4A3A00B1F054 /* SwiftUI.framework in Frameworks */,
 				3F2367FD2C1D4A3A00B1F054 /* WidgetKit.framework in Frameworks */,
 				097C02859EDD833D8DAA22D5 /* libPods-ShoppingApp-ShoppingAppWidgetExtension.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F81FA282C9A1CEF00202C01 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F81FA362C9A1E1700202C01 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,6 +286,24 @@
 			path = utils;
 			sourceTree = "<group>";
 		};
+		3F81FA2C2C9A1CEF00202C01 /* ShoppingWatch */ = {
+			isa = PBXGroup;
+			children = (
+				3F81FA2D2C9A1CEF00202C01 /* ShoppingWatchExtension.swift */,
+				3F81FA2F2C9A1CEF00202C01 /* ShoppingWatch.swift */,
+				3F81FA312C9A1CEF00202C01 /* Info.plist */,
+			);
+			path = ShoppingWatch;
+			sourceTree = "<group>";
+		};
+		3F81FA3A2C9A1E1700202C01 /* ShoppingWatchApp */ = {
+			isa = PBXGroup;
+			children = (
+				3F81FA3B2C9A1E1700202C01 /* ShoppingWatchApp.swift */,
+			);
+			path = ShoppingWatchApp;
+			sourceTree = "<group>";
+		};
 		3F9DF3542C28FA1C00AB9E97 /* payment */ = {
 			isa = PBXGroup;
 			children = (
@@ -278,6 +319,8 @@
 				3FB234EC2C13BB5A00E2AAF1 /* ShoppingApp */,
 				3FB2350D2C13BB5C00E2AAF1 /* ShoppingAppUITests */,
 				3F2368002C1D4A3A00B1F054 /* ShoppingAppWidget */,
+				3F81FA2C2C9A1CEF00202C01 /* ShoppingWatch */,
+				3F81FA3A2C9A1E1700202C01 /* ShoppingWatchApp */,
 				3FB234EB2C13BB5A00E2AAF1 /* Products */,
 				37E60EE294656A6F85AF93D7 /* Pods */,
 				CAE71FA8366CE1BD1D43C689 /* Frameworks */,
@@ -291,6 +334,8 @@
 				3FB235002C13BB5C00E2AAF1 /* ShoppingAppTests.xctest */,
 				3FB2350A2C13BB5C00E2AAF1 /* ShoppingAppUITests.xctest */,
 				3F2367FB2C1D4A3900B1F054 /* ShoppingAppWidgetExtension.appex */,
+				3F81FA2B2C9A1CEF00202C01 /* ShoppingWatch.appex */,
+				3F81FA392C9A1E1700202C01 /* ShoppingWatchApp.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -412,6 +457,40 @@
 			productReference = 3F2367FB2C1D4A3900B1F054 /* ShoppingAppWidgetExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		3F81FA2A2C9A1CEF00202C01 /* ShoppingWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3F81FA342C9A1CEF00202C01 /* Build configuration list for PBXNativeTarget "ShoppingWatch" */;
+			buildPhases = (
+				3F81FA272C9A1CEF00202C01 /* Sources */,
+				3F81FA282C9A1CEF00202C01 /* Frameworks */,
+				3F81FA292C9A1CEF00202C01 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ShoppingWatch;
+			productName = ShoppingWatch;
+			productReference = 3F81FA2B2C9A1CEF00202C01 /* ShoppingWatch.appex */;
+			productType = "com.apple.product-type.extensionkit-extension";
+		};
+		3F81FA382C9A1E1700202C01 /* ShoppingWatchApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3F81FA3D2C9A1E1700202C01 /* Build configuration list for PBXNativeTarget "ShoppingWatchApp" */;
+			buildPhases = (
+				3F81FA352C9A1E1700202C01 /* Sources */,
+				3F81FA362C9A1E1700202C01 /* Frameworks */,
+				3F81FA372C9A1E1700202C01 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ShoppingWatchApp;
+			productName = ShoppingWatchApp;
+			productReference = 3F81FA392C9A1E1700202C01 /* ShoppingWatchApp.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		3FB234E92C13BB5A00E2AAF1 /* ShoppingApp */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3FB235142C13BB5C00E2AAF1 /* Build configuration list for PBXNativeTarget "ShoppingApp" */;
@@ -486,6 +565,12 @@
 					3F2367FA2C1D4A3900B1F054 = {
 						CreatedOnToolsVersion = 15.2;
 					};
+					3F81FA2A2C9A1CEF00202C01 = {
+						CreatedOnToolsVersion = 15.2;
+					};
+					3F81FA382C9A1E1700202C01 = {
+						CreatedOnToolsVersion = 15.2;
+					};
 					3FB234E92C13BB5A00E2AAF1 = {
 						CreatedOnToolsVersion = 15.2;
 					};
@@ -516,6 +601,8 @@
 				3FB234FF2C13BB5C00E2AAF1 /* ShoppingAppTests */,
 				3FB235092C13BB5C00E2AAF1 /* ShoppingAppUITests */,
 				3F2367FA2C1D4A3900B1F054 /* ShoppingAppWidgetExtension */,
+				3F81FA2A2C9A1CEF00202C01 /* ShoppingWatch */,
+				3F81FA382C9A1E1700202C01 /* ShoppingWatchApp */,
 			);
 		};
 /* End PBXProject section */
@@ -526,6 +613,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F23680A2C1D4A3C00B1F054 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F81FA292C9A1CEF00202C01 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F81FA372C9A1E1700202C01 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -723,6 +824,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3F81FA272C9A1CEF00202C01 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F81FA2E2C9A1CEF00202C01 /* ShoppingWatchExtension.swift in Sources */,
+				3F81FA302C9A1CEF00202C01 /* ShoppingWatch.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F81FA352C9A1E1700202C01 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F81FA3C2C9A1E1700202C01 /* ShoppingWatchApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3FB234E62C13BB5A00E2AAF1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -803,7 +921,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = J38J9AUL72;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ShoppingAppWidget/Info.plist;
@@ -835,7 +953,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = J38J9AUL72;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ShoppingAppWidget/Info.plist;
@@ -856,6 +974,108 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3F81FA322C9A1CEF00202C01 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = J38J9AUL72;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ShoppingWatch/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ShoppingWatch;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ml.ShoppingWatch;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.2;
+			};
+			name = Debug;
+		};
+		3F81FA332C9A1CEF00202C01 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = J38J9AUL72;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ShoppingWatch/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ShoppingWatch;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ml.ShoppingWatch;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 10.2;
+			};
+			name = Release;
+		};
+		3F81FA3E2C9A1E1700202C01 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = J38J9AUL72;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ml.ShoppingWatchApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.2;
+			};
+			name = Debug;
+		};
+		3F81FA3F2C9A1E1700202C01 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = J38J9AUL72;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ml.ShoppingWatchApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 10.2;
 			};
 			name = Release;
 		};
@@ -998,7 +1218,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ShoppingApp/Preview Content\"";
-				DEVELOPMENT_TEAM = 7HDZ85FQQT;
+				DEVELOPMENT_TEAM = J38J9AUL72;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1039,7 +1259,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ShoppingApp/Preview Content\"";
-				DEVELOPMENT_TEAM = 7HDZ85FQQT;
+				DEVELOPMENT_TEAM = J38J9AUL72;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1169,6 +1389,24 @@
 			buildConfigurations = (
 				3F2368102C1D4A3D00B1F054 /* Debug */,
 				3F2368112C1D4A3D00B1F054 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3F81FA342C9A1CEF00202C01 /* Build configuration list for PBXNativeTarget "ShoppingWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F81FA322C9A1CEF00202C01 /* Debug */,
+				3F81FA332C9A1CEF00202C01 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3F81FA3D2C9A1E1700202C01 /* Build configuration list for PBXNativeTarget "ShoppingWatchApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F81FA3E2C9A1E1700202C01 /* Debug */,
+				3F81FA3F2C9A1E1700202C01 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

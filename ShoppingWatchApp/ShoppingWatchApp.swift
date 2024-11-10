@@ -1,13 +1,13 @@
 //
-//  ShoppingAppTests.swift
-//  ShoppingAppTests
+//  ShoppingWatchApp.swift
+//  ShoppingWatchApp
 //
-//  Created by Maria Luísa Costa Pinto on 07/06/24.
+//  Created by Maria Luísa Costa Pinto on 17/09/24.
 //
 
 import XCTest
 
-final class ShoppingAppTests: XCTestCase {
+final class ShoppingWatchApp: XCTestCase {
   override func setUpWithError() throws {
     // Put setup code here. This method is called before the invocation of each test method in the class.
   }
